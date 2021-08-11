@@ -1,0 +1,6 @@
+printf "\e[47;45m"
+sudo mkdir /mnt/usb
+sudo mount /dev/sda /mnt/usb
+
+
+
