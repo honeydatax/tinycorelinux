@@ -33,7 +33,7 @@ while i <> index
 wend 
 
 print "-----------------------"
-open command(1)+".sh" for input as 1
+open command(1)+".sh" for output as 1
 for i=0 to index
 	print #1,!"wget \"" + strs + list(i) + !"\" "
 	
