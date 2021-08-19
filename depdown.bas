@@ -10,7 +10,7 @@ public sub adds(s as string)
 			ii=1
 		end if
 	next
-	if ii=0 and trim(s)<>"" then
+	if ii=0 and trim(s)<>"" and instr(s,".tcz")>0 then
 		list(index)=trim(s)
 		index=index+1
 	end if 
@@ -36,7 +36,7 @@ print "-----------------------"
 mkdir(command(1))
 chdir(command(1))
 for i=0 to index
-	shell (!"wget \"" + strs + list(i) + !"\" ")
+	if list(i)<>"" then shell (!"wget \"" + strs + list(i) + !"\" ")
 	
 
 next 

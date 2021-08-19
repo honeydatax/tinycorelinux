@@ -10,7 +10,7 @@ public sub adds(s as string)
 			ii=1
 		end if
 	next
-	if ii=0 and trim(s)<>"" then
+	if ii=0 and trim(s)<>"" and instr(s,".tcz") > 0 then
 		list(index)=trim(s)
 		index=index+1
 	end if 
@@ -35,7 +35,7 @@ wend
 print "-----------------------"
 open command(1)+".sh" for output as 1
 for i=0 to index
-	print #1,!"wget \"" + strs + list(i) + !"\" "
+	if list(i) <> "" then print #1,!"wget \"" + strs + list(i) + !"\" "
 	
 
 next 
